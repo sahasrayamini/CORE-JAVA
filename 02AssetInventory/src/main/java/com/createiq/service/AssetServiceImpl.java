@@ -14,8 +14,13 @@ public class AssetServiceImpl implements AssetService{
 	@Autowired
 	private AssetRepository assetRepository;
 	
+	 @Autowired
+	    private EmailService emailService;
+	
 	@Override
 	public Asset save(Asset asset) {
+		 Asset savedAsset = assetRepository.save(asset);
+	        emailService.sendNotificationEmail(savedAsset.getName(), "saved");
 		return assetRepository.save(asset);
 	}
 

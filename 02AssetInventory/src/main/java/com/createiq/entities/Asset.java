@@ -1,4 +1,4 @@
-package com.createiq.entities;
+ package com.createiq.entities;
 
 import java.util.Date;
 
